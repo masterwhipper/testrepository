@@ -1,6 +1,6 @@
 //GLOBAL Thingies
 var date = new Date();
-var year = d.getFullYear();
+var year = date.getFullYear();
 
 
 //CLIENT INFO -- CLIENT
