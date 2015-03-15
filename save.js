@@ -1,8 +1,19 @@
+<<<<<<< HEAD
 function saveClientData() {
 	queryClientInfo();
     var file = "Client Data";
     window.open('data:txt/file;charset=utf-8,' + JSON.stringify(getClientJSON()));
 }
+=======
+function save() {
+            var file = "tits";
+
+            window.open('data:txt/file;charset=utf-8,' + escape(file));
+        }
+
+        var sButton = document.getElementById('saveInfo');
+        sButton.addEventListener('click', save);
+>>>>>>> origin/master
 
 function queryClientInfo() {
     //client
