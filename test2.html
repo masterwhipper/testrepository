@@ -271,7 +271,7 @@
                 <div style="margin: 20px 5%;display:block-inline;">Client Death
                     <input type="text" placeholder="Age" name="rClientD" id="rClientD" style="margin: 0 40px 0 20px; width: 30px;">Spouse Death
                     <input type="text" placeholder="Age" name="rSpouseD" id="rSpouseD" style="margin: 0 40px 0 20px; width: 30px;">
-                    <button name="rApply" id="rApply" style="margin: 0 40px 0 20px;">Apply</button>
+                    <button type="button" name="rApply" id="rApply" onclick="generateReport()" style="margin: 0 40px 0 20px;">Generate</button>
                 </div>
                 <div style="margin: auto; height:500px;">
                     <table>
@@ -297,7 +297,8 @@
                         </tr>
                     </table>
                     <div class="overflow">
-                        <table id="incomeTable"></table>
+                        <table id="incomeTable">
+						</table>
                     </div>
                 </div>
             </div>
