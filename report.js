@@ -13,12 +13,19 @@ function generateReport() {
 	for (var j=0;j<10;j++){
  var table = document.getElementById("incomeTable");
  var row = table.insertRow(j);
- var cell1 = row.insertCell(0);
- var cell2 = row.insertCell(1); 
- var cell3 = row.insertCell(2);
+ var c1 = row.insertCell(0);
+ var c2 = row.insertCell(1); 
+ var c3 = row.insertCell(2);
+ var c4 = row.insertCell(0);
+ var c5 = row.insertCell(1); 
+ var c6 = row.insertCell(2);
 
-cell1.innerHTML = "test",
-cell2.innerHTML = "test",
-cell3.innerHTML = "test";
+c1.innerHTML = "test",
+c2.innerHTML = "test",
+c3.innerHTML = "test",
+c4.innerHTML = "test",
+c5.innerHTML = "test",
+c6.innerHTML = "test";
+
     }
 }
