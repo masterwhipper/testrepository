@@ -1,19 +1,31 @@
-<<<<<<< HEAD
+//GLOBAL Thingies
+var date = new Date();
+var year = date.getFullYear();
+
+var c_firstName, c_lastName;
+var c_dobMonth, c_dobDay, c_dobYear;
+var c_retirementAge;
+var c_comments;
+var c_age;
+
+var s_firstName, s_lastName;
+var s_dobMonth, s_dobDay, s_dobYear;
+var s_retirementAge;
+var s_comments;
+var s_age;
+
+var a_firstName, a_lastName;
+var a_dobMonth, a_dobDay, a_dobYear;
+var a_retirementAge;
+var a_comments;
+		
+
+
 function saveClientData() {
 	queryClientInfo();
     var file = "Client Data";
     window.open('data:txt/file;charset=utf-8,' + JSON.stringify(getClientJSON()));
 }
-=======
-function save() {
-            var file = "tits";
-
-            window.open('data:txt/file;charset=utf-8,' + escape(file));
-        }
-
-        var sButton = document.getElementById('saveInfo');
-        sButton.addEventListener('click', save);
->>>>>>> origin/master
 
 function queryClientInfo() {
     //client
