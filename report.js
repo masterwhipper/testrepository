@@ -1,3 +1,7 @@
+
+
+function generateReport() {
+var i = 0;
 // Create an empty <tr> element and add it to the 1st position of the table:
 var row = table.insertRow(0);
 
@@ -10,9 +14,10 @@ var taxableCell = row.insertCell(1);
 var aftertaxCell = row.insertCell(1);
 
 // Add some text to the new cells:
-yrCell.innerHTML = "i";
-cAgeCell.innerHTML = "NEW CELL2";
-sAgeCell.innerHTML = "NEW CELL1";
-pretaxCell.innerHTML = "NEW CELL2";
-taxableCell.innerHTML = "NEW CELL1";
-aftertaxCell.innerHTML = "NEW CELL2";
+yrCell.innerHTML = year + i;
+cAgeCell.innerHTML = cAge + i;
+sAgeCell.innerHTML = sAge + i;
+pretaxCell.innerHTML = "test";
+taxableCell.innerHTML = "test";
+aftertaxCell.innerHTML = "test";
+}

@@ -2,11 +2,12 @@
 <!-- http://www.w3schools.com/jquery/jquery_hide_show.asp http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide_show -->
 <body>
 	<head>
-	<script src="hide.js"></script>
-	<script src="save.js"></script>
-	<script src="report.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="variables.js"></script>
+		<script src="hide.js"></script>
+		<script src="save.js"></script>
+		<script src="report.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
     <script>
 		function save() {
@@ -17,32 +18,6 @@
 
         var sButton = document.getElementById('saveInfo');
         sButton.addEventListener('click', save);
-    </script>
-    <script>
-        //Hide - Show
-        $(document).ready(function() {
-            $("#tabAssets").hide();
-            $("#tabReport").hide();
-
-            $("#buttonInfo").click(function() {
-                $("#tabInfo").show();
-                $("#tabAssets").hide();
-                $("#tabReport").hide();
-                requestUpload("test.json");
-                alert("DEBUG");
-            });
-            $("#buttonReport").click(function() {
-                $("#tabInfo").hide();
-                $("#tabAssets").hide();
-                $("#tabReport").show();
-            });
-            $("#buttonSources").click(function() {
-                $("#tabInfo").hide();
-                $("#tabAssets").show();
-                $("#tabReport").hide();
-            });
-        });
-        //Button Listenrs
     </script>
     <script>
         function queryClientInfo() {
@@ -62,24 +37,6 @@
             s_dobYear = document.getElementByID("sYear").value;
             s_comments = document.getElementByID("sComment").value;
         }
-    </script>
-    <script>
-        //CLIENT INFO -- CLIENT
-        var c_firstName, c_lastName;
-        var c_dobMonth, c_dobDay, c_dobYear;
-        var c_retirementAge;
-        var c_comments;
-        //CLIENT INFO -- SPOUSE
-        var s_firstName, s_lastName;
-        var s_dobMonth, s_dobDay, s_dobYear;
-        var s_retirementAge;
-        var s_comments;
-        //
-        //CLIENT INFO -- ASSETS
-        var a_firstName, a_lastName;
-        var a_dobMonth, a_dobDay, a_dobYear;
-        var a_retirementAge;
-        var a_comments;
     </script>
     <script>
         function getClientInfo() {
