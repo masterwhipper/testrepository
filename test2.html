@@ -6,7 +6,6 @@
 		<script src="FileSaver.js"></script>
 		<script src="hide.js"></script>
 		<script src="report.js"></script>
-		<script src="data.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
     <div id="tabWrappers">
@@ -21,7 +20,8 @@
         <div id="barButton">
             <div id="buttonWrap">
                 <a href id="saveInfo" type="button" onclick="saveClientData(this)" name="saveInfo" class="barButton">Save</a>
-				<button id="loadInfo" type="button" onclick="load()" name="loadInfo" class="barButton" style="margin-left:20px;">Load</button>
+				<input type="file" value="Load" name="loadInfo" class="barButton" style="margin-left:20px;"/>
+				<!--<button id="loadInfo" type="button" onclick="load()" name="loadInfo" class="barButton" style="margin-left:20px;">Load</button> -->
             </div>
             <div id="nameLabel">
                 <p id="firstLabel" class="name">(First)</p>
@@ -245,4 +245,5 @@
             </div>
         </div>
     </div>
+	<script src="data.js"></script>
 </body>

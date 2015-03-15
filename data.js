@@ -19,6 +19,51 @@ var s_retirementAge;
 var s_comments;
 var s_age;
 
+function loadClientData(files){
+	alert("Abacus Potato!");
+	var file = files[0];
+	var reader = new FileReader();
+	reader.onload = function(event){
+		var contents = JSON.parse(reader.result);
+		alert(contents["c_firstName"]);
+		
+		//client
+		document.getElementById("cFName").value = contents["c_firstName"];
+		document.getElementById("cLName").value = contents["c_lastName"];
+		document.getElementById("cMonth").value = contents["c_dobMonth"];
+		document.getElementById("cDay").value = contents["c_dobDay"];
+		document.getElementById("cYear").value = contents["c_dobYear"];
+		document.getElementById("cComment").value = contents["c_comments"];
+
+		//spouse
+		document.getElementById("sFName").value = contents["s_firstName"];
+		document.getElementById("sLName").value = contents["s_lastName"];
+		document.getElementById("sMonth").value = contents["s_dobMonth"];
+		document.getElementById("sDay").value = contents["s_dobDay"];
+		document.getElementById("sYear").value = contents["s_dobYear"];
+		document.getElementById("sComment").value = contents["s_comments"];
+	}
+	reader.readAsText(file, "UTF-8");
+	queryClientInfo();
+}
+
+function distributeData(){
+    document.getElementById("cFName").value = c_firstName;
+    document.getElementById("cLName").value = c_lastName;
+    document.getElementById("cMonth").value = c_dobMonth;
+    document.getElementById("cDay").value = c_dobDay;
+    document.getElementById("cYear").value = c_dobYear;
+    document.getElementById("cComment").value = c_comments;
+
+    //spouse
+	document.getElementById("sFName").value = s_firstName;
+    document.getElementById("sLName").value = s_lastName;
+    document.getElementById("sMonth").value = s_dobMonth;
+    document.getElementById("sDay").value = s_dobDay;
+    document.getElementById("sYear").value = s_dobYear;
+    document.getElementById("sComment").value = s_comments;
+}
+
 function saveClientData(element) {
 	queryClientInfo();
 	var json = JSON.stringify(getClientJSON(), null, "\t");
