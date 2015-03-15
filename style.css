@@ -16,6 +16,7 @@ body, html {
 .tabButton {
     font-size: 32px;
     color: #fff;
+	cursor: pointer;
 }
 ul.tabList {
     width: 100%;

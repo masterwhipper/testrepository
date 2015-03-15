@@ -72,18 +72,15 @@
         <img type="file" id="logo" src="http://i.imgur.com/xuZ8LFZ.png" alt="LOGO">
         <div id="tabTitles">
             <ul class="tabList">
-                <li style="width: 25%;display: inline; text-align: center;">
-                    <li class="tabList"><a id="buttonInfo" class="tabButton" onclick="">Client Info</a>
-
-                        <li class="tabList"><a id="buttonSources" class="tabButton" onclick="">Income Sources</a>
-
-                            <li class="tabList"><a id="buttonReport" class="tabButton" onclick="">Report</a>
-
+                <li class="tabList"><a id="buttonInfo" class="tabButton" onclick="">Client Info</a>
+                <li class="tabList"><a id="buttonSources" class="tabButton" onclick="">Income Sources</a>
+				<li class="tabList"><a id="buttonReport" class="tabButton" onclick="">Report</a>
             </ul>
         </div>
         <div id="barButton">
             <div id="buttonWrap">
                 <button id="saveInfo" type="button" onclick="save()" name="saveInfo" class="barButton">Save</button>
+				<button id="loadInfo" type="button" onclick="load()" name="loadInfo" class="barButton" style="margin-left:20px;">Load</button>
             </div>
             <div id="nameLabel">
                 <p id="firstLabel" class="name">(First)</p>
