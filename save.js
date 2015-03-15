@@ -6,9 +6,6 @@ function save() {
 
         var sButton = document.getElementById('saveInfo');
         sButton.addEventListener('click', save);
-		
-		
-var table = document.getElementById("myTable");
 
 function queryClientInfo() {
             //client
