@@ -22,6 +22,9 @@ var s_age;
 var incomeSources = [];
 var assets = [];
 
+var incomeNew = true, assetNew = true;
+var currentIncomeSource = 0, currentAsset = 0;
+
 function clearAssetBoxes(){
 	document.getElementById("aOwner").value = "client";
 	document.getElementById("aDesc").value = "";

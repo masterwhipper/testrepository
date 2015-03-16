@@ -1,24 +1,14 @@
 $(document).ready(function() {
 	$("#aNew").click(function(){
-		assets.push({
-			"aOwner":"client",
-			"aDesc":"",
-			"aMA":"",
-			"aDef":"",
-			"aBonus":"yes",
-			"aBPercent":"",
-			"aFeat":"simple",
-			"aRate":"",
-			"aColayn":"yes",
-			"aCOLAper":"",
-			"aSByn":"joint",
-			"aSBper":""
-		});
 		clearAssetBoxes();
+		assetNew = true;
 	});
 	
 	$("#aSave").click(function(){
-		
+		if(incomeNew){
+			
+		}else currentAssetSource = assets.length;
+		assetNew = false;
 	});
 
 	$("#aEdit").click(function(){
@@ -26,21 +16,21 @@ $(document).ready(function() {
 	});
 	
 	$("#iNew").click(function(){
-		incomeSources.push({
-			"iOwner":"client",
-			"iDesc":"",
-			"iSYear":"",
-			"iEYear":"",
-			"iCOLAyn":"yes",
-			"iCOLAper":"",
-			"iSByn":"yes",
-			"iSBper":"joint"
-		});
 		clearIncomeBoxes();
+		incomeNew = true;
 	});
 
 	$("#iSave").click(function(){
-		
+		incomeSources.push({
+			"iOwner":document.getElementById("iOwner").value,
+			"iDesc":document.getElementById("iDesc").value,
+			"iSYear":document.getElementById("iSYear").value,
+			"iEYear":document.getElementById("iCOLAyn").value,
+			"iCOLAyn":document.getElementById("iCOLAyn").value,
+			"iCOLAper":document.getElementById("iCOLAper").value,
+			"iSByn":document.getElementById("iSByn").value = "yes",
+			"iSBper":document.getElementById("iSBper").value
+		});
 	});
 
 	$("#iEdit").click(function(){
