@@ -25,12 +25,27 @@ var assets = [];
 function clearAssetBoxes(){
 	document.getElementById("aOwner").value = "client";
 	document.getElementById("aDesc").value = "";
-	document.getElementById("aSYear").value = "";
-	document.getElementById("aEYear").value = "";
-	document.getElementById("aCOLAyn").value = "yes";
+	document.getElementById("aMA").value = "";
+	document.getElementById("aDef").value = "";
+	document.getElementById("aBonus").value = "yes";
+	document.getElementById("aBPercent").value = "";
+	document.getElementById("aFeat").value = "simple";
+	document.getElementById("aRate").value = "";
+	document.getElementById("aColayn").value = "yes";
 	document.getElementById("aCOLAper").value = "";
-	document.getElementById("aSByn").value = "yes";
+	document.getElementById("aSByn").value = "joint";
 	document.getElementById("aSBper").value = "";
+}
+
+function clearIncomeBoxes(){
+	document.getElementById("iOwner").value = "client";
+	document.getElementById("iDesc").value = "";
+	document.getElementById("iSYear").value = "";
+	document.getElementById("iEYear").value = "";
+	document.getElementById("iCOLAyn").value = "yes";
+	document.getElementById("iCOLAper").value = "";
+	document.getElementById("iSByn").value = "yes";
+	document.getElementById("iSBper").value = "joint";
 }
 
 function loadClientData(files){
