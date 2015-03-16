@@ -19,13 +19,30 @@ var s_retirementAge;
 var s_comments;
 var s_age;
 
+var incomeSources = [];
+var assets = [];
+
+//##LISTENERS
+
+//ASSETS
+
+function clearAssetBoxes(){
+	$("#aOwner").prop(selectedIndex, 0);
+	document.getElementById("aDesc").value = "";
+	document.getElementById("aSYear").value = "";
+	document.getElementById("aEYear").value = "";
+	document.getElementById("aCOLAyn").value = "Yes";
+	document.getElementById("aCOLAper").value = "";
+	document.getElementById("aSByn").value = "Yes";
+	document.getElementById("aSBper").value = "";
+}
+
 function loadClientData(files){
-	alert("Abacus Potato!");
 	var file = files[0];
 	var reader = new FileReader();
+	
 	reader.onload = function(event){
 		var contents = JSON.parse(reader.result);
-		alert(contents["c_firstName"]);
 		
 		//client
 		document.getElementById("cFName").value = contents["c_firstName"];
@@ -43,25 +60,9 @@ function loadClientData(files){
 		document.getElementById("sYear").value = contents["s_dobYear"];
 		document.getElementById("sComment").value = contents["s_comments"];
 	}
+	
 	reader.readAsText(file, "UTF-8");
 	queryClientInfo();
-}
-
-function distributeData(){
-    document.getElementById("cFName").value = c_firstName;
-    document.getElementById("cLName").value = c_lastName;
-    document.getElementById("cMonth").value = c_dobMonth;
-    document.getElementById("cDay").value = c_dobDay;
-    document.getElementById("cYear").value = c_dobYear;
-    document.getElementById("cComment").value = c_comments;
-
-    //spouse
-	document.getElementById("sFName").value = s_firstName;
-    document.getElementById("sLName").value = s_lastName;
-    document.getElementById("sMonth").value = s_dobMonth;
-    document.getElementById("sDay").value = s_dobDay;
-    document.getElementById("sYear").value = s_dobYear;
-    document.getElementById("sComment").value = s_comments;
 }
 
 function saveClientData(element) {
@@ -69,7 +70,7 @@ function saveClientData(element) {
 	var json = JSON.stringify(getClientJSON(), null, "\t");
 	var blob = new Blob([json], {type: "application/json"});
 	var url = URL.createObjectURL(blob);
-    element.download = "Client Data.json";
+    element.download = c_firstName.concat(".json");
 	element.href = url;
 }
 
@@ -109,5 +110,8 @@ function getClientJSON() {
     json["s_dobYear"] = s_dobYear;
     json["s_retirementAge"] = s_retirementAge;
     json["s_comments"] = s_comments;
+	
+	json["incomeSources"] = incomeSources;
+	json["assets"] = assets;
     return json;
 }
