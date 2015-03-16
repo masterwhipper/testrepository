@@ -1,3 +1,6 @@
+var cDeath = 77;
+var sDeath;
+
 var cAge = 60;
 var sAge = 67;
 /*
@@ -9,6 +12,25 @@ var taxableCell = row.insertCell(4);
 var aftertaxCell = row.insertCell(5);
 var rTable = document.getElementById("incomeTable");
 */
+
+function cDead(i){
+	if (cAge + i > cDeath){
+	return "-";
+	}
+	else{
+	return cAge + i;
+	}
+}
+function sDead(i){
+	if (sAge + i > sDeath){
+	return "-";
+	}
+	else{
+	return sAge + i;
+	}
+}
+
+
 function generateReport() {
 	for (var i=0;i<20;i++){
  var table = document.getElementById("incomeTable");
@@ -21,8 +43,8 @@ function generateReport() {
  var c6 = row.insertCell(5);
 
 c1.innerHTML = year + i,
-c2.innerHTML = c_Age + i,
-c3.innerHTML = "test",
+c2.innerHTML = cDead(i),
+c3.innerHTML = sAge + i,
 c4.innerHTML = "test",
 c5.innerHTML = "test",
 c6.innerHTML = "test";

@@ -179,3 +179,9 @@ td, th {
     color: #fff;
     font-size: 10pt;
 }
+
+#iTable td {
+	border: 1px solid white;
+	float: left;
+	line-height:30px;
+}
