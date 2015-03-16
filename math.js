@@ -27,14 +27,21 @@ y= output as always, a = deposit, r = asset growth, b = bonus, p = payout %, def
 [1/3/2015 4:07:58 PM] Masto: and I will have to think about e
 [1/3/2015 4:11:34 PM] Masto: the calculation of e will be an entirely different function so I would
 
-function save(){
+function payout(y,c,d,i) {
+	var o = i - d;
+	var g = 1 + c / 100;
+	if (o > 0) {
+		return y * pow(g,i);
+	}
+	else {
+		return 0;
+	}
+}
 
-var y = jsonValue
-
-function assetCalc(a,b,c,d,r,interestType,iscola) {
+function assetCalc(a,b,d,r,interestType,iscola,y) {
 	e = a * (1 + b);
 	if (interestType == "compound") {
-		var t = (1 + r / 10);
+		var t = (1 + r / 100);
 		y = e * pow(t,d);
 	}
 	else {
@@ -42,4 +49,4 @@ function assetCalc(a,b,c,d,r,interestType,iscola) {
 	}
 }
 
-}
+function pretaxCalc(

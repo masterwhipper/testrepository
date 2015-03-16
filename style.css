@@ -55,7 +55,15 @@ li.tabList {
     color: #fff;
     line-height: 78px;
     margin: 0px 60px;
+	text-decoration: none;
 }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 .name {
     font-family: Century Gothic, sans-serif;
     display: inline;
