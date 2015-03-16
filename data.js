@@ -22,18 +22,14 @@ var s_age;
 var incomeSources = [];
 var assets = [];
 
-//##LISTENERS
-
-//ASSETS
-
 function clearAssetBoxes(){
-	$("#aOwner").prop(selectedIndex, 0);
+	document.getElementById("aOwner").value = "client";
 	document.getElementById("aDesc").value = "";
 	document.getElementById("aSYear").value = "";
 	document.getElementById("aEYear").value = "";
-	document.getElementById("aCOLAyn").value = "Yes";
+	document.getElementById("aCOLAyn").value = "yes";
 	document.getElementById("aCOLAper").value = "";
-	document.getElementById("aSByn").value = "Yes";
+	document.getElementById("aSByn").value = "yes";
 	document.getElementById("aSBper").value = "";
 }
 

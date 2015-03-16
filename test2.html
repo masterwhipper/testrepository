@@ -134,14 +134,14 @@
             <div style="float:left; width: 50%;">
                 <div class="clientBox">
                     <div class="tbEdit">
-                        <button id="aNew" name="aNew">New</button>
-                        <button id="aSave" name="aSave">Save</button>
-                        <button id="aEdit" name="aEdit">Edit</button>
+                        <button id="iNew" name="iNew">New</button>
+                        <button id="iSave" name="iSave">Save</button>
+                        <button id="iEdit" name="iEdit">Edit</button>
                     </div>
                     <br/>
                     <br/>
                     <form id="aForm">Owner
-                        <select id="aOwner" name="aOwner" style="margin: 0 18px 0 70px;" class="fM">
+                        <select id="iOwner" name="iOwner" style="margin: 0 18px 0 70px;" class="fM">
                             <option value="client">Client</option>
                             <option value="spouse">Spouse</option>
                         </select>Description
@@ -149,43 +149,43 @@
                         <br/>
                         <br/>
                         <br/>Start Year
-                        <input type="text" id="aSYear" name="aSYear" class="fM" placeholder="ex. (2030)" style="margin: 0 24px 0 48px; width: 64px;">End Year
-                        <input type="text" id="aEYear" name="aEYear" style="width: 64px; margin-left:55px" class="fM" placeholder="ex. (2030)">
+                        <input type="text" id="iSYear" name="iSYear" class="fM" placeholder="ex. (2030)" style="margin: 0 24px 0 48px; width: 64px;">End Year
+                        <input type="text" id="iEYear" name="iEYear" style="width: 64px; margin-left:55px" class="fM" placeholder="ex. (2030)">
                         <br/>
                         <br/>
                         <br/>COLA
-                        <select name="aCOLAyn" style="margin: 0 40px 0 74px;" class="fM">
+                        <select name="iCOLAyn" style="margin: 0 40px 0 74px;" class="fM">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>COLA Annual %
-                        <input type="text" id="aCOLAper" name="aCOLAper" style="width: 54px;" class="fM" placeholder="(1 - 100)">
+                        <input type="text" id="iCOLAper" name="iCOLAper" style="width: 54px;" class="fM" placeholder="(1 - 100)">
                         <br/>
                         <br/>
                         <br/>Survivor Benefit
-                        <select id="aSByn" style="margin-right: 40px;" class="fM">
+                        <select id="iSByn" style="margin-right: 40px;" class="fM">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>% to Survivor
-                        <input type="text" id="aSBper" name="aSBper" style="width: 54px; margin-left:26px" class="fM" placeholder="(1 - 100)">
+                        <input type="text" id="iSBper" name="aSBper" style="width: 54px; margin-left:26px" class="fM" placeholder="(1 - 100)">
 						<br/>
                         <br/>
                         <br/>Monthly Amount
-                        <span style="margin-left:26px">$</span><input type="text" id="sMA" name="sMA" style="width: 200px;" class="fM">
+                        <span style="margin-left:26px">$</span><input type="text" id="iMA" name="iMA" style="width: 200px;" class="fM">
                 </div>
             </div>
             <div style="width:50%;float:right;">
                 <div class="clientBox">
                     <div class="tbEdit">
-                        <button id="iNew" name="iNew">New</button>
-                        <button id="iSave" name="iSave">Save</button>
-                        <button id="iEdit" name="iEdit">Edit</button>
+                        <button id="aNew" name="iNew">New</button>
+                        <button id="aSave" name="iSave">Save</button>
+                        <button id="aEdit" name="iEdit">Edit</button>
                     </div>
                     <br/>
                     <form id="formsInfo">
 						<table id="iTable">
 						<tr>
 							<td>Owner</td>
-							<td><select id="iOwner" name="iOwner" style="float:left;" class="fM">
+							<td><select id="aOwner" name="aOwner" style="float:left;" class="fM">
 								<option value="client">Client</option>
 								<option value="spouse">Spouse</option>
 								</select></td>
@@ -194,45 +194,45 @@
 						</tr>
 						<tr>
 							<td>Deposit</td>
-							<td>$<input type="text" id="iMA" name="iMA" style="width: 80px;" class="fM"></td>
+							<td>$<input type="text" id="aMA" name="aMA" style="width: 80px;" class="fM"></td>
 							<td>Years of Deferral</td>
-							<td><input type="text" id="iDef" name="iDef" class="fM" placeholder="0-25" style="width: 61px;"></td>
+							<td><input type="text" id="aDef" name="aDef" class="fM" placeholder="0-25" style="width: 61px;"></td>
 						</tr>
 						<tr>
 							<td>Bonus</td>
-							<td><select id="iBonus" style="float: left;" class="fM">
+							<td><select id="aBonus" style="float: left;" class="fM">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
 							</select></td>
 							<td>Bonus %</td>
-							<td><input type="text" id="iBPercent" name="iBPercent" style="width: 54px; float: left;" class="fM" placeholder="(1 - 100)"></td>
+							<td><input type="text" id="aBPercent" name="aBPercent" style="width: 54px; float: left;" class="fM" placeholder="(1 - 100)"></td>
 						</tr>
 						<tr>
 							<td>Asset Feature</td>
-							<td><select id="iFeat" style="float: left;" class="fM">
+							<td><select id="aFeat" style="float: left;" class="fM">
                             <option value="simple">Simple</option>
                             <option value="compound">Compound</option>
 							</select></td>
 							<td>Growth Rate %</td>
-							<td><input type="text" id="iRate" name="iRate" style="width: 54px; float:left;" class="fM" placeholder="(1 - 100)"></td>
+							<td><input type="text" id="aRate" name="aRate" style="width: 54px; float:left;" class="fM" placeholder="(1 - 100)"></td>
 							</td>
 						</tr>
 						<tr>
 							<td>COLA</td>
-							<td><select name="iCOLAyn" style="float:left;" class="fM">
+							<td><select name="aCOLAyn" style="float:left;" class="fM">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
 							</select></td>
 							<td>COLA Annual %</td>
-							<td><input type="text" id="iCOLAper" name="iCOLAper" style="width: 54px; float: left;" class="fM" placeholder="(1 - 100)"></td>
+							<td><input type="text" id="aCOLAper" name="aCOLAper" style="width: 54px; float: left;" class="fM" placeholder="(1 - 100)"></td>
 						<tr>
 							<td>Survivorship</td>
-							<td><select id="iSByn" style="float: left;" class="fM">
+							<td><select id="aSByn" style="float: left;" class="fM">
 								<option value="joint">Joint</option>
 								<option value="single">Single</option>
 							</select></td>
 							<td>% to Survivor</td>
-							<td><input type="text" id="iSBper" name="iSBper" style="width: 54px; float:left;" class="fM" placeholder="(1 - 100)"></td>
+							<td><input type="text" id="aSBper" name="aSBper" style="width: 54px; float:left;" class="fM" placeholder="(1 - 100)"></td>
 						</tr>
 						</table>
                         
