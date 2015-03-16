@@ -34,7 +34,7 @@ function clearAssetBoxes(){
 	document.getElementById("aBPercent").value = "";
 	document.getElementById("aFeat").value = "simple";
 	document.getElementById("aRate").value = "";
-	document.getElementById("aColayn").value = "yes";
+	document.getElementById("aCOLAyn").value = "yes";
 	document.getElementById("aCOLAper").value = "";
 	document.getElementById("aSByn").value = "joint";
 	document.getElementById("aSBper").value = "";
