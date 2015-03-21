@@ -52,6 +52,7 @@ $(document).ready(function() {
 		if(incomeNew){
 			currentIncomeSource = incomeSources.length;
 			incomeSources.push(json);
+			addIncum(incomeSources[currentIncomeSource - 1]);
 			incomeNew = false;
 		}else{
 			incomeSources[currentIncomeSource] = json;
