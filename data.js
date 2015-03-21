@@ -25,6 +25,14 @@ var assets = [];
 var incomeNew = true, assetNew = true;
 var currentIncomeSource = 0, currentAsset = 0;
 
+function getCurrentIncomeSource(){
+	return incomeSources[currentIncomeSource];
+}
+
+function getCurrentAsset(){
+	return assets[currentAsset];
+}
+
 function clearAssetBoxes(){
 	document.getElementById("aOwner").value = "client";
 	document.getElementById("aDesc").value = "";
