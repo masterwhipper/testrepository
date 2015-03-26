@@ -46,12 +46,14 @@ $(document).ready(function() {
 				"iEYear":document.getElementById("iCOLAyn").value,
 				"iCOLAyn":document.getElementById("iCOLAyn").value,
 				"iCOLAper":document.getElementById("iCOLAper").value,
-				"iSByn":document.getElementById("iSByn").value = "yes",
-				"iSBper":document.getElementById("iSBper").value
+				"iSByn":document.getElementById("iSByn").value,
+				"iSBper":document.getElementById("iSBper").value,
+				"iMA":document.getElementById("iMA").value
 			};
 		if(incomeNew){
 			currentIncomeSource = incomeSources.length;
 			incomeSources.push(json);
+			addIncum(json);
 			incomeNew = false;
 		}else{
 			incomeSources[currentIncomeSource] = json;

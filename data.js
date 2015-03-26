@@ -81,6 +81,10 @@ function loadClientData(files){
 		document.getElementById("sDay").value = contents["s_dobDay"];
 		document.getElementById("sYear").value = contents["s_dobYear"];
 		document.getElementById("sComment").value = contents["s_comments"];
+		
+		//misc
+		incomeSources = contents["incomeSources"];
+		assets = contents["assets"];
 	}
 	
 	reader.readAsText(file, "UTF-8");
