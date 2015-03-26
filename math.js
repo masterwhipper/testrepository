@@ -49,4 +49,4 @@ function assetCalc(a,b,d,r,interestType,iscola,y) {
 	}
 }
 
-function pretaxCalc(
+//function pretaxCalc(
