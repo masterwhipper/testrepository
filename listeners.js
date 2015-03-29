@@ -5,7 +5,6 @@ $(document).ready(function() {
 	});
 	
 	$("#aSave").click(function(){
-		alert(assetNew);
 		var json = {
 				"aOwner":document.getElementById("aOwner").value,
 				"aDesc":document.getElementById("aDesc").value,
@@ -23,6 +22,7 @@ $(document).ready(function() {
 		if(assetNew){
 			currentAsset = assets.length;
 			assets.push(json);
+			addAsset(json);
 			assetNew = false;
 		}else{
 			assets[currentAsset] = json;
