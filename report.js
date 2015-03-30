@@ -31,7 +31,7 @@ function sDead(i){
 }
 
 var iLength = 1;
-var aLength = 2;
+var aLength = 1;
 
 function generateReport() {
 	var i;
