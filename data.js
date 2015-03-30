@@ -57,6 +57,7 @@ function clearIncomeBoxes(){
 	document.getElementById("iCOLAper").value = "";
 	document.getElementById("iSByn").value = "yes";
 	document.getElementById("iSBper").value = "joint";
+	document.getElementById("iMA").value = "";
 }
 
 function loadClientData(files){

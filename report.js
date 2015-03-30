@@ -30,24 +30,50 @@ function sDead(i){
 	}
 }
 
+var iLength = 1;
+var aLength = 2;
 
 function generateReport() {
-	for (var i=0;i<20;i++){
- var table = document.getElementById("incomeTable");
- var row = table.insertRow(i);
- var c1 = row.insertCell(0);
- var c2 = row.insertCell(1); 
- var c3 = row.insertCell(2);
- var c4 = row.insertCell(3);
- var c5 = row.insertCell(4); 
- var c6 = row.insertCell(5);
-
-c1.innerHTML = year + i,
-c2.innerHTML = cDead(i),
-c3.innerHTML = sAge + i,
-c4.innerHTML = "test",
-c5.innerHTML = "test",
-c6.innerHTML = "test";
-
+	var i;
+	var j;
+	var k;
+	
+ var table = document.getElementById("reportTable");
+ var head = table.insertRow(0);
+	head.style.backgroundColor = "black";
+	head.style.fontSize = "10pt";
+	head.style.color = "white";
+	head.style.height = "20px";
+	head.style.maxHeight = "20px";
+	
+	head.insertCell(0).innerHTML = "<b>Year</b>";
+	head.insertCell(0).style.width = "61px";
+	head.insertCell(1).innerHTML = "<b>Client<br/>Age</b>";
+	head.insertCell(1).style.width = "40px";
+	head.insertCell(2).innerHTML = "<b>Spouse<br/>Age</b>";
+	head.insertCell(2).style.width = "40px";
+	head.insertCell(3).innerHTML = "<b>Pre-Tax <br/>Income</b>";
+	head.insertCell(3).style.width = "300px";
+	head.insertCell(3).innerHTML = "<b>Pre-Tax <br/>Income</b>";
+	head.insertCell(3).style.width = "300px";
+	head.insertCell(3).innerHTML = "<b>Pre-Tax <br/>Income</b>";
+	head.insertCell(3).style.width = "300px";
+	
+ 
+	for (i=0;i<21;i++){
+		var row = table.insertRow(i+1);
+		row.insertCell(0).innerHTML = year + i,
+		row.insertCell(1).innerHTML = cDead(i),
+		row.insertCell(2).innerHTML = sAge + i;
+			for (j=0; j<iLength; j++){
+				row.insertCell(j + 3).innerHTML = incomeSources[j]["iMA"];
+			}
+			for (k=0; k<aLength; k++){
+				row.insertCell(iLength + k + 3).innerHTML = assets[k]["aMA"];
+			}
+		row.insertCell(iLength + aLength + 3).innerHTML = "pretax";
+		row.insertCell(iLength + aLength + 4).innerHTML = "taxable";
+		row.insertCell(iLength + aLength + 5).innerHTML = "aftertax";
     }
 }
+
