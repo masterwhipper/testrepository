@@ -5,6 +5,10 @@
 		<title>Income Cashflow Manager</title>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+		
 		<script src="FileSaver.js"></script>
 		<script src="listeners.js"></script>
 		<script src="report.js"></script>
@@ -149,7 +153,7 @@
                             <option value="Client">Client</option>
                             <option value="Spouse">Spouse</option>
                         </select>Description
-                        <input type="text" id="iDesc" name="iDesc" class="fM" style="margin-left:42px; width: 130px;" placeholder="One word; no spaces">
+                        <input type="text" id="iDesc" name="iDesc" class="fM" style="margin-left:42px; width: 130px;">
                         <br/>
                         <br/>
                         <br/>Start Year
@@ -276,4 +280,12 @@
             </div>
         </div>
     </div>
+	
+	<div id="editAssetDialog" title="Select Asset">
+		<select id="assetSelectBox" style="width: 100%;"></select>
+	</div>
+	
+	<div id="editICSourcesDialog" title="Select Income Source">
+		<select id="assetSelectBox" style="width: 100%;"></select>
+	</div>
 </body>

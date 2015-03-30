@@ -30,7 +30,7 @@ $(document).ready(function() {
 	});
 
 	$("#aEdit").click(function(){
-		//???
+		$("#editAssetDialog").dialog();
 	});
 	
 	$("#iNew").click(function(){
@@ -61,7 +61,7 @@ $(document).ready(function() {
 	});
 
 	$("#iEdit").click(function(){
-		//???
+		$("#editICSourcesDialog").dialog();
 	});
 
 	$("input[type=file]").on('change', function(){
@@ -70,6 +70,31 @@ $(document).ready(function() {
 
     $("#tabAssets").hide();
     $("#tabReport").hide();
+	
+	
+	$("#editAssetDialog").on("dialogopen", function(event, ui){
+		
+		var newOptions = {};
+		for(var i = 0; i < assets.length; i++){
+			newOptions[assets[i]["aDesc"]] = i;
+		}
+		
+		alert(JSON.stringify(newOptions));
+		
+		var sBox = $("#assetSelectBox");
+		sBox.empty();
+		$.each(newOptions, function(value,key) {
+			sbox.append($("<option></option>")
+				.attr("value", value).text(key));
+		});
+	});
+	
+	$("#editICSourcesDialog").on("dialogopen", function(event, ui){
+	
+	});
+	
+	$("#editAssetDialog").hide();
+	$("#editICSourcesDialog").hide();
 	
 	$("#buttonInfo").click(function() {
         $("#tabInfo").show();

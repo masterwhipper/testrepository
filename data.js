@@ -34,7 +34,7 @@ function getCurrentAsset(){
 }
 
 function clearAssetBoxes(){
-	document.getElementById("aOwner").value = "client";
+	document.getElementById("aOwner").value = "Client";
 	document.getElementById("aDesc").value = "";
 	document.getElementById("aMA").value = "";
 	document.getElementById("aDef").value = "";
@@ -49,7 +49,7 @@ function clearAssetBoxes(){
 }
 
 function clearIncomeBoxes(){
-	document.getElementById("iOwner").value = "client";
+	document.getElementById("iOwner").value = "Client";
 	document.getElementById("iDesc").value = "";
 	document.getElementById("iSYear").value = "";
 	document.getElementById("iEYear").value = "";
