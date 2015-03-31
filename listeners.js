@@ -84,7 +84,7 @@ $(document).ready(function() {
 		var sBox = $("#assetSelectBox");
 		sBox.empty();
 		$.each(newOptions, function(value,key) {
-			sbox.append($("<option></option>")
+			sBox.append($("<option></option>")
 				.attr("value", value).text(key));
 		});
 	});

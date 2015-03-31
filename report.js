@@ -1,8 +1,8 @@
 var cDeath = 77;
 var sDeath;
 
-var cAge = 60;
-var sAge = 67;
+var cAge;
+var sAge;
 /*
 var yrCell = row.insertCell(0);
 var cAgeCell = row.insertCell(1);
@@ -12,6 +12,18 @@ var taxableCell = row.insertCell(4);
 var aftertaxCell = row.insertCell(5);
 var rTable = document.getElementById("incomeTable");
 */
+
+function cAgeCalc() {
+	var bDay = new Date(c_dobYear + "/" + c_dobMonth + "/" + c_dobDay);
+	var current = new Date();
+	cAge = Math.floor((current-bDay)/31536000000);
+}
+
+function sAgeCalc() {
+	var bDay = new Date(s_dobYear + "/" + s_dobMonth + "/" + s_dobDay);
+	var current = new Date();
+	sAge = Math.floor((current-bDay)/31536000000);
+}
 
 function cDead(i){
 	if (cAge + i > cDeath){
@@ -30,16 +42,31 @@ function sDead(i){
 	}
 }
 
-var iLength = 1;
-var aLength = 1;
 
 function generateReport() {
+	cAgeCalc();
+	sAgeCalc();
 	var i;
 	var j;
 	var k;
 	
  var table = document.getElementById("reportTable");
- var head = table.insertRow(0);
+ var tbHead = document.getElementById("reportHead");
+
+ var numColSpan = 3 + assets.length + incomeSources.length;
+ var colSpanPer = Math.floor(90 / numColSpan);
+ 
+ tbHead.innerHTML = "<colgroup><col width=\"4%\"><col class=\"colAge\" span=\"2\" width=\"3%\"><col class=\"colNumb\" span=\"" + numColSpan + "\" width=\"" + colSpanPer + "%\"></colgroup>";
+ table.innerHTML = "<colgroup><col width=\"4%\"><col class=\"colAge\" span=\"2\" width=\"3%\"><col class=\"colNumb\" span=\"" + numColSpan + "\" width=\"" + colSpanPer + "%\"></colgroup>";
+ 
+while(table.rows.length > 0) {
+  table.deleteRow(0);
+}
+while(tbHead.rows.length > 0) {
+  tbHead.deleteRow(0);
+}
+
+ var head = tbHead.insertRow(0);
 	head.style.backgroundColor = "black";
 	head.style.fontSize = "10pt";
 	head.style.color = "white";
@@ -47,33 +74,33 @@ function generateReport() {
 	head.style.maxHeight = "20px";
 	
 	head.insertCell(0).innerHTML = "<b>Year</b>";
-	head.insertCell(0).style.width = "61px";
 	head.insertCell(1).innerHTML = "<b>Client<br/>Age</b>";
-	head.insertCell(1).style.width = "40px";
 	head.insertCell(2).innerHTML = "<b>Spouse<br/>Age</b>";
-	head.insertCell(2).style.width = "40px";
-	head.insertCell(3).innerHTML = "<b>Pre-Tax <br/>Income</b>";
-	head.insertCell(3).style.width = "300px";
-	head.insertCell(3).innerHTML = "<b>Pre-Tax <br/>Income</b>";
-	head.insertCell(3).style.width = "300px";
-	head.insertCell(3).innerHTML = "<b>Pre-Tax <br/>Income</b>";
-	head.insertCell(3).style.width = "300px";
+	for (j=0; j<incomeSources.length; j++){
+		head.insertCell(j + 3).innerHTML = incomeSources[j]["iDesc"];
+	}
+	for (k=0; k<assets.length; k++){
+		head.insertCell(incomeSources.length + k + 3).innerHTML = assets[k]["aDesc"];
+	}
+	head.insertCell(assets.length + incomeSources.length + 3).innerHTML = "<b>Pre-Tax <br/>Income</b>";
+	head.insertCell(assets.length + incomeSources.length + 4).innerHTML = "<b>Social <br/>Security Tax</b>";
+	head.insertCell(assets.length + incomeSources.length + 5).innerHTML = "<b>AfterTax <br/>Income</b>";
 	
  
 	for (i=0;i<21;i++){
-		var row = table.insertRow(i+1);
+		var row = table.insertRow(i);
 		row.insertCell(0).innerHTML = year + i,
-		row.insertCell(1).innerHTML = cDead(i),
+		row.insertCell(1).innerHTML = cDead(i);
 		row.insertCell(2).innerHTML = sAge + i;
-			for (j=0; j<iLength; j++){
+			for (j=0; j<incomeSources.length; j++){
 				row.insertCell(j + 3).innerHTML = incomeSources[j]["iMA"];
 			}
-			for (k=0; k<aLength; k++){
-				row.insertCell(iLength + k + 3).innerHTML = assets[k]["aMA"];
+			for (k=0; k<assets.length; k++){
+				row.insertCell(incomeSources.length + k + 3).innerHTML = assets[k]["aMA"];
 			}
-		row.insertCell(iLength + aLength + 3).innerHTML = "pretax";
-		row.insertCell(iLength + aLength + 4).innerHTML = "taxable";
-		row.insertCell(iLength + aLength + 5).innerHTML = "aftertax";
+		row.insertCell(incomeSources.length + assets.length + 3).innerHTML = "pretax";
+		row.insertCell(incomeSources.length + assets.length + 4).innerHTML = "taxable";
+		row.insertCell(incomeSources.length + assets.length + 5).innerHTML = "aftertax";
     }
 }
 
