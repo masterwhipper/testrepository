@@ -68,6 +68,8 @@ while(tbHead.rows.length > 0) {
   tbHead.deleteRow(0);
 }
 
+alert(c_dobYear + "/" + c_dobMonth + "/" + c_dobDay);
+
  var head = tbHead.insertRow(0);
 	head.style.backgroundColor = "black";
 	head.style.fontSize = "10pt";
