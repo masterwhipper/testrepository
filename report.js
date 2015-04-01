@@ -14,15 +14,17 @@ var rTable = document.getElementById("incomeTable");
 */
 
 function cAgeCalc() {
-	var bDay = new Date(c_dobYear + "/" + c_dobMonth + "/" + c_dobDay);
-	var current = new Date();
-	cAge = Math.floor((current-bDay)/31536000000);
+	var bDay = new Date(c_dobYear + "-" + c_dobMonth + "-" + c_dobDay);
+	var ageDifMs = Date.now() - bDay.getTime();
+    var ageDate = new Date(ageDifMs);
+    cAge = Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
 function sAgeCalc() {
-	var bDay = new Date(s_dobYear + "/" + s_dobMonth + "/" + s_dobDay);
-	var current = new Date();
-	sAge = Math.floor((current-bDay)/31536000000);
+	var bDay = new Date(s_dobYear + "-" + s_dobMonth + "-" + s_dobDay);
+	var ageDifMs = Date.now() - bDay.getTime();
+    var ageDate = new Date(ageDifMs);
+	sAge = Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
 function cDead(i){
