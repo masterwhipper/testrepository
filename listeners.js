@@ -81,37 +81,42 @@ $(document).ready(function() {
 		}
 		html += "</select>";
 		html += "<button type='button' id='assetSelectOpen' style:'float: right;'>Open</button>";
+		html += "<button type='button' id='assetSelectCancel' style:'float: right;'>Cancel</button>";
 		
 		document.getElementById("editAssetDialog").innerHTML = html;
 		$("#assetSelectOpen").click(function(){
 			$("#editAssetDialog").dialog("close");
+			currentAsset = document.getElementById("assetSelector").value;
+			syncAssetInput();
+			assetNew = false;
+		});		
+		
+		$("#assetSelectCancel").click(function(){
+			$("#editAssetDialog").dialog("close");
 		});
-	});
-	
-	$("#editAssetDialog").on("dialogclose", function(event, ui){
-		currentAsset = document.getElementById("assetSelectOpen").value;
-		syncAssetInput();
 	});
 	
 	$("#editICSourcesDialog").on("dialogopen", function(event, ui){
 		var html = "<select id='isourceSelector' style='width: 100%;'>";
 		for(var i = 0; i < incomeSources.length; i++){
-			html += "<option value=" + i + ">" + incomeSources[i]["iDesc"] + "</option>";
+			html += "<option value='" + i + "'>" + incomeSources[i]["iDesc"] + "</option>";
 		}
 		html += "</select>";
 		html += "<button type='button' id='isourceSelectOpen' style:'float: right;'>Open</button>";
+		html += "<button type='button' id='isourceSelectCancel' style:'float: right;'>Cancel</button>";
 		
 		document.getElementById("editICSourcesDialog").innerHTML = html;
 		$("#isourceSelectOpen").click(function(){
 			$("#editICSourcesDialog").dialog("close");
+			currentIncomeSource = document.getElementById("isourceSelector").value;
+			syncISourceInput();
+			incomeNew = false;
+		});
+		
+		$("#isourceSelectCancel").click(function(){
+			$("#editICSourcesDialog").dialog("close");
 		});
 	});
-	
-	$("#editICSourcesDialog").on("dialogclose", function(event, ui){
-		document.getElementById("isourceSelectOpen").value
-			currentIncomeSource = document.getElementById("isourceSelectOpen").value;
-			syncISourceInput();
-		});
 		
 		$("#editAssetDialog").hide();
 		$("#editICSourcesDialog").hide();
