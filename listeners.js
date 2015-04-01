@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$(".ui-button-icon-only").hide();
+	
 	$("#aNew").click(function(){
 		clearAssetBoxes();
 		assetNew = true;
@@ -73,24 +75,29 @@ $(document).ready(function() {
 	
 	
 	$("#editAssetDialog").on("dialogopen", function(event, ui){
-		
-		var newOptions = {};
+		var html = "<select id='assetSelector' style='width: 100%;'>";
 		for(var i = 0; i < assets.length; i++){
-			newOptions[assets[i]["aDesc"]] = i;
+			html += "<option value=" + i + ">" + assets[i]["aDesc"] + "</option>";
 		}
-		
-		alert(JSON.stringify(newOptions));
-		
-		var sBox = $("#assetSelectBox");
-		sBox.empty();
-		$.each(newOptions, function(value,key) {
-			sbox.append($("<option></option>")
-				.attr("value", value).text(key));
+		html += "</select>";
+		html += "<button type='button' id='assetSelectOpen' style:'float: right;'>Open</button>";
+		document.getElementById("editAssetDialog").innerHTML = html;
+		$("#assetSelectOpen").click(function(){
+			$("#editAssetDialog").dialog("close");
 		});
 	});
 	
 	$("#editICSourcesDialog").on("dialogopen", function(event, ui){
-	
+		var html = "<select id='isourceSelector' style='width: 100%;'>";
+		for(var i = 0; i < incomeSources.length; i++){
+			html += "<option value=" + i + ">" + incomeSources[i]["iDesc"] + "</option>";
+		}
+		html += "</select>";
+		html += "<button type='button' id='isourceSelectOpen' style:'float: right;'>Open</button>";
+		document.getElementById("editICSourcesDialog").innerHTML = html;
+		$("#isourceSelectOpen").click(function(){
+			$("#editICSourcesDialog").dialog("close");
+		});
 	});
 	
 	$("#editAssetDialog").hide();

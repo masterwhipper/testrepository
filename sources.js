@@ -1,3 +1,7 @@
+function clearIncum(){
+	var table = document.getElementById("assetTable");
+}
+
 function addIncum(object) {
 	var table = document.getElementById("assetTable");
 	var row = table.insertRow(incomeSources.length - 1);

@@ -1,3 +1,6 @@
+.ui-dialog-titlebar-close{/*NO TOUCH*/
+    display: none;
+}
 * {
     padding: 0;
     margin: 0;

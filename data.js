@@ -56,7 +56,7 @@ function clearIncomeBoxes(){
 	document.getElementById("iCOLAyn").value = "yes";
 	document.getElementById("iCOLAper").value = "";
 	document.getElementById("iSByn").value = "yes";
-	document.getElementById("iSBper").value = "joint";
+	document.getElementById("iSBper").value = "";
 	document.getElementById("iMA").value = "";
 }
 
@@ -86,6 +86,13 @@ function loadClientData(files){
 		//misc
 		incomeSources = contents["incomeSources"];
 		assets = contents["assets"];
+		
+		for(var i = 0; i < incomeSources.length; i++){
+			addIncum(incomeSources[i]);
+		}
+		for(var i = 0; i < incomeSources.length; i++){
+			addAsset(assets[i]);
+		}
 	}
 	
 	reader.readAsText(file, "UTF-8");
