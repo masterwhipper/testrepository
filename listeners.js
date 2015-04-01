@@ -73,7 +73,6 @@ $(document).ready(function() {
     $("#tabAssets").hide();
     $("#tabReport").hide();
 	
-	
 	$("#editAssetDialog").on("dialogopen", function(event, ui){
 		var html = "<select id='assetSelector' style='width: 100%;'>";
 		for(var i = 0; i < assets.length; i++){
@@ -137,4 +136,38 @@ $(document).ready(function() {
 			$("#tabAssets").show();
 			$("#tabReport").hide();
 		});
+		
+		$("#sDay").on('input', function(){
+			s_dobDay = document.getElementById("sDay").value;
+			sAgeCalc();
+			document.getElementById("sAge").innerHTML = sAge;
+		});
+		$("#sYear").on('input', function(){
+			s_dobYear = document.getElementById("sYear").value;
+			sAgeCalc();
+			document.getElementById("sAge").innerHTML = sAge;
+		});
+		$("#sMonth").on('input', function(){
+			s_dobMonth = document.getElementById("sMonth").value
+			sAgeCalc();
+			document.getElementById("sAge").innerHTML = sAge;
+		});
+		
+		$("#cDay").on('input', function(){
+			c_dobDay = document.getElementById("cDay").value;
+			cAgeCalc();
+			document.getElementById("cAge").innerHTML = cAge;
+		});
+		$("#cYear").on('input', function(){
+			c_dobYear = document.getElementById("cYear").value;
+			cAgeCalc();
+			document.getElementById("cAge").innerHTML = cAge;
+		});
+		$("#cMonth").on('input', function(){
+			c_dobMonth = document.getElementById("cMonth").value
+			cAgeCalc();
+			document.getElementById("cAge").innerHTML = cAge;
+		});
+		
+		
 	});
