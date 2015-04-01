@@ -79,11 +79,22 @@ $(document).ready(function() {
 		for(var i = 0; i < assets.length; i++){
 			html += "<option value=" + i + ">" + assets[i]["aDesc"] + "</option>";
 		}
+<<<<<<< HEAD
 		html += "</select>";
 		html += "<button type='button' id='assetSelectOpen' style:'float: right;'>Open</button>";
 		document.getElementById("editAssetDialog").innerHTML = html;
 		$("#assetSelectOpen").click(function(){
 			$("#editAssetDialog").dialog("close");
+=======
+		
+		alert(JSON.stringify(newOptions));
+		
+		var sBox = $("#assetSelectBox");
+		sBox.empty();
+		$.each(newOptions, function(value,key) {
+			sBox.append($("<option></option>")
+				.attr("value", value).text(key));
+>>>>>>> origin/master
 		});
 	});
 	
