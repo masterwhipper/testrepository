@@ -92,10 +92,16 @@ function loadClientData(files){
 		
 		syncAssetTable();
 		syncISourceTable();
+		
+		queryClientInfo();
+		
+		cAgeCalc();
+		document.getElementById("cAge").innerHTML = cAge;
+		sAgeCalc();
+		document.getElementById("sAge").innerHTML = sAge;
 	}
 	
 	reader.readAsText(file, "UTF-8");
-	queryClientInfo();
 }
 
 function syncAssetInput(){
