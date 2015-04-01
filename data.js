@@ -90,16 +90,53 @@ function loadClientData(files){
 		incomeSources = contents["incomeSources"];
 		assets = contents["assets"];
 		
-		for(var i = 0; i < incomeSources.length; i++){
-			addIncum(incomeSources[i]);
-		}
-		for(var i = 0; i < incomeSources.length; i++){
-			addAsset(assets[i]);
-		}
+		syncAssetTable();
+		syncISourceTable();
 	}
 	
 	reader.readAsText(file, "UTF-8");
 	queryClientInfo();
+}
+
+function syncAssetInput(){
+	document.getElementById("aOwner").value = assets[currentAsset]["aOwner"];
+	document.getElementById("aDesc").value = assets[currentAsset]["aDesc"];
+	document.getElementById("aMA").value = assets[currentAsset]["aMA"];
+	document.getElementById("aDef").value = assets[currentAsset]["aDef"];
+	document.getElementById("aBonus").value = assets[currentAsset]["aBonus"];
+	document.getElementById("aBPercent").value = assets[currentAsset]["aBPercent"];
+	document.getElementById("aFeat").value = assets[currentAsset]["aFeat"];
+	document.getElementById("aRate").value = assets[currentAsset]["aRate"];
+	document.getElementById("aCOLAyn").value = assets[currentAsset]["aCOLAyn"];
+	document.getElementById("aCOLAper").value = assets[currentAsset]["aCOLAper"];
+	document.getElementById("aSByn").value = assets[currentAsset]["aSByn"];
+	document.getElementById("aSBper").value = assets[currentAsset]["aSBper"];
+}
+
+function syncISourceInput(){
+	document.getElementById("iOwner").value = incomeSources[currentIncomeSource]["iOwner"];
+	document.getElementById("iDesc").value = incomeSources[currentIncomeSource]["iDesc"];
+	document.getElementById("iSYear").value = incomeSources[currentIncomeSource]["iSYear"];
+	document.getElementById("iCOLAyn").value = incomeSources[currentIncomeSource]["iEYear"];
+	document.getElementById("iCOLAyn").value = incomeSources[currentIncomeSource]["iCOLAyn"];
+	document.getElementById("iCOLAper").value = incomeSources[currentIncomeSource]["iCOLAper"];
+	document.getElementById("iSByn").value = incomeSources[currentIncomeSource]["iSByn"];
+	document.getElementById("iSBper").value = incomeSources[currentIncomeSource]["iSBper"];
+	document.getElementById("iMA").value = incomeSources[currentIncomeSource]["iMA"];
+}
+
+function syncAssetTable(){
+	clearAssets();
+	for(var i = 0; i < assets.length; i++){
+		addAsset(assets[i]);
+	}
+}
+
+function syncISourceTable(){
+	clearIncum();
+	for(var i = 0; i < incomeSources.length; i++){
+		addIncum(incomeSources[i]);
+	}
 }
 
 function saveClientData(element) {

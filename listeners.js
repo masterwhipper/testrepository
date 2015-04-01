@@ -24,11 +24,11 @@ $(document).ready(function() {
 		if(assetNew){
 			currentAsset = assets.length;
 			assets.push(json);
-			addAsset(json);
 			assetNew = false;
 		}else{
 			assets[currentAsset] = json;
 		}
+		syncAssetTable();
 	});
 
 	$("#aEdit").click(function(){
@@ -55,11 +55,11 @@ $(document).ready(function() {
 		if(incomeNew){
 			currentIncomeSource = incomeSources.length;
 			incomeSources.push(json);
-			addIncum(json);
 			incomeNew = false;
 		}else{
 			incomeSources[currentIncomeSource] = json;
 		}
+		syncISourceTable();
 	});
 
 	$("#iEdit").click(function(){
@@ -77,22 +77,20 @@ $(document).ready(function() {
 	$("#editAssetDialog").on("dialogopen", function(event, ui){
 		var html = "<select id='assetSelector' style='width: 100%;'>";
 		for(var i = 0; i < assets.length; i++){
-			html += "<option value=" + i + ">" + assets[i]["aDesc"] + "</option>";
+			html += "<option value='" + i + "'>" + assets[i]["aDesc"] + "</option>";
 		}
 		html += "</select>";
 		html += "<button type='button' id='assetSelectOpen' style:'float: right;'>Open</button>";
+		
 		document.getElementById("editAssetDialog").innerHTML = html;
 		$("#assetSelectOpen").click(function(){
 			$("#editAssetDialog").dialog("close");
-			
-		alert(JSON.stringify(newOptions));
-		
-		var sBox = $("#assetSelectBox");
-		sBox.empty();
-		$.each(newOptions, function(value,key) {
-			sBox.append($("<option></option>")
-				.attr("value", value).text(key));
 		});
+	});
+	
+	$("#editAssetDialog").on("dialogclose", function(event, ui){
+		currentAsset = document.getElementById("assetSelectOpen").value;
+		syncAssetInput();
 	});
 	
 	$("#editICSourcesDialog").on("dialogopen", function(event, ui){
@@ -102,29 +100,36 @@ $(document).ready(function() {
 		}
 		html += "</select>";
 		html += "<button type='button' id='isourceSelectOpen' style:'float: right;'>Open</button>";
+		
 		document.getElementById("editICSourcesDialog").innerHTML = html;
 		$("#isourceSelectOpen").click(function(){
 			$("#editICSourcesDialog").dialog("close");
 		});
 	});
 	
-	$("#editAssetDialog").hide();
-	$("#editICSourcesDialog").hide();
-	
-	$("#buttonInfo").click(function() {
-        $("#tabInfo").show();
-        $("#tabAssets").hide();
-        $("#tabReport").hide();
-    });
-	
-    $("#buttonReport").click(function() {
-		$("#tabInfo").hide();
-        $("#tabAssets").hide();
-        $("#tabReport").show();
-    });
-    $("#buttonSources").click(function() {
-		$("#tabInfo").hide();
-        $("#tabAssets").show();
-        $("#tabReport").hide();
-    });
-});
+	$("#editICSourcesDialog").on("dialogclose", function(event, ui){
+		document.getElementById("isourceSelectOpen").value
+			currentIncomeSource = document.getElementById("isourceSelectOpen").value;
+			syncISourceInput();
+		});
+		
+		$("#editAssetDialog").hide();
+		$("#editICSourcesDialog").hide();
+		
+		$("#buttonInfo").click(function() {
+			$("#tabInfo").show();
+			$("#tabAssets").hide();
+			$("#tabReport").hide();
+		});
+		
+		$("#buttonReport").click(function() {
+			$("#tabInfo").hide();
+			$("#tabAssets").hide();
+			$("#tabReport").show();
+		});
+		$("#buttonSources").click(function() {
+			$("#tabInfo").hide();
+			$("#tabAssets").show();
+			$("#tabReport").hide();
+		});
+	});

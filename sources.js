@@ -1,5 +1,6 @@
 function clearIncum(){
 	var table = document.getElementById("incumTable");
+	if(table.rows.length <= 0) return;
 	while(table.rows.length > 0) {
 		table.deleteRow(0);
 	}
@@ -7,14 +8,15 @@ function clearIncum(){
 
 function clearAssets(){
 	var table = document.getElementById("assetTable");
+	if(table.rows.length <= 0) return;
 	while(table.rows.length > 0) {
 		table.deleteRow(0);
 	}
 }
 
 function addIncum(object) {
-	var table = document.getElementById("assetTable");
-	var row = table.insertRow(incomeSources.length - 1);
+	var table = document.getElementById("incumTable");
+	var row = table.insertRow(table.rows.length);
 	var c1 = row.insertCell(0);
 	var c2 = row.insertCell(1); 
 	var c3 = row.insertCell(2);
@@ -31,8 +33,8 @@ function addIncum(object) {
 }
 
 function addAsset(object) {
-	var table = document.getElementById("incumTable");
-	var row = table.insertRow(assets.length - 1);
+	var table = document.getElementById("assetTable");
+	var row = table.insertRow(table.rows.length);
 	var c1 = row.insertCell(0);
 	var c2 = row.insertCell(1); 
 	var c3 = row.insertCell(2);
