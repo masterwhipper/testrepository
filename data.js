@@ -64,6 +64,9 @@ function loadClientData(files){
 	var file = files[0];
 	var reader = new FileReader();
 	
+	clearIncum();
+	clearAssets();
+	
 	reader.onload = function(event){
 		var contents = JSON.parse(reader.result);
 		

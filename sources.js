@@ -1,5 +1,15 @@
 function clearIncum(){
+	var table = document.getElementById("incumTable");
+	while(table.rows.length > 0) {
+		table.deleteRow(0);
+	}
+}
+
+function clearAssets(){
 	var table = document.getElementById("assetTable");
+	while(table.rows.length > 0) {
+		table.deleteRow(0);
+	}
 }
 
 function addIncum(object) {
